@@ -8,13 +8,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { MarcasComponent } from './marcas/marcas.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     PagesComponent,
     AccountSettingsComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    MarcasComponent
     ],
   imports: [
     CommonModule , SharedModule, AppRoutingModule, FormsModule, ComponentsModule
