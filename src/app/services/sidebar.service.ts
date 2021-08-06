@@ -22,7 +22,7 @@ export class SidebarService {
       icono: 'mdi mdi-gauge',
       submenu: [
         {titulo: 'Categorias' , url: 'categoria'},
-        {titulo: 'Marcas' , url: '/'},
+        {titulo: 'Marcas' , url: 'marcas'},
         {titulo: 'Proveedores' , url: '/'},
       ]
     },
