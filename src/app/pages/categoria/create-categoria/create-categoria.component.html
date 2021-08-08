@@ -1,0 +1,82 @@
+<!-- Categoria  -->
+<div class="row">
+
+    <div class="col-12" [ngClass]="{'activo': estadoCategoriaTemp, 'inactivo': !estadoCategoriaTemp , 'nuevo': categoriaNueva}">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h3 class="card-title"> Categoria 
+                        <span class="label label-table label-info">{{accion}}</span>
+                    </h3>
+                    <form class="form-material m-t-40" [formGroup]="CategoriaForm">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="nombre-categoria">Nombre</label>
+                                        <input type="email"
+                                               name="nombre-categoria" 
+                                               class="form-control" 
+                                               formControlName="nombreCategoria"
+                                               placeholder="Nombre Categoria"> 
+                                        <span style="color: red"
+                                               [hidden]="!CategoriaForm.get('nombreCategoria').hasError('required')">
+                                               El nombre de la categoria es requerida 
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Descipcion</label>
+                                        <textarea 
+                                                class="form-control"
+                                                formControlName="descripcionCategoria"
+                                                rows="2">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Estado</label> 
+                                        <select
+                                            formControlName="estadoCategoria"
+                                            class="form-control"    
+                                        >
+                                            <option
+                                                *ngFor="let cateEstados of listaEstadosCategoria"
+                                                [value]="cateEstados.value"
+                                            >{{ cateEstados.nombre }}
+                                            </option>
+                                        </select>                         
+                                    </div>      
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <button 
+                                    type="button" 
+                                    class="btn waves-effect waves-light btn-rounded btn-info"
+                                    (click)="crearCategoria()"
+                                    [disabled]="CategoriaForm.invalid"
+                                    >Guardar</button>
+
+                                    <button 
+                                            type="button" 
+                                            (click)="volver()" 
+                                            class="btn waves-effect ml-2 waves-light btn-rounded btn-info"> 
+                                            Volver
+                                    </button>
+
+                            </div>
+                    </form>
+                </div>
+              
+            </div>
+
+        </div>
+    </div>
+</div>
+       
+ <!-- Fin Categoria-->
