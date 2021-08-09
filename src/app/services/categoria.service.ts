@@ -22,7 +22,6 @@ export class CategoriaService {
     }
   ]
   
-  
   constructor(
     private http: HttpClient
   ) { }
@@ -39,9 +38,7 @@ export class CategoriaService {
       )       
   }
 
-
   public listOneCategory(url):Observable<CategoriaUnicaResponse>{
-
     return this.http.get(`${this.urlBase}/${url}`)
     .pipe(
       map( (res:any) => {
@@ -53,5 +50,14 @@ export class CategoriaService {
     );
   }
  
+  public createCategoria(url , data){
+
+    return this.http.post(`${this.urlBase}/${url}` , data)
+    .pipe(
+      map((res) => {
+         return res
+      })
+    )
+  }
 
 }

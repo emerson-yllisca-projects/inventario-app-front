@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
-import { Categoria, PaginacionCategoria, CategoriaResponse } from '../../models/categoria';
+import { Categoria, CategoriaResponse } from '../../models/categoria';
 import { Router } from '@angular/router';
-
-declare var $: any;
 
 @Component({
   selector: 'app-categoria',
@@ -21,8 +19,7 @@ export class CategoriaComponent implements OnInit {
   listaCategorias:Categoria[];
 
   accionModal:string;
-
-
+  
   ngOnInit(): void {
     const p1 = this.inicializarComponente();
     Promise.all([p1]).then( () => {
@@ -54,7 +51,7 @@ export class CategoriaComponent implements OnInit {
 
 
   editar(categoria:Categoria){
-      this.router.navigateByUrl(`dashboard/categorias/editar/${categoria.id}`);
+      this.router.navigate([`dashboard/categorias/editar/${categoria.id}`]);
   }
 
   elimiinar(categoria:Categoria){

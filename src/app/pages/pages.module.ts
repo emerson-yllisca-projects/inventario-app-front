@@ -14,6 +14,7 @@ import { MarcasService } from '../services/marcas.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateCategoriaComponent } from './categoria/create-categoria/create-categoria.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { NotificacionService } from '../services/notificacion.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   providers:[
     CategoriaService,
-    MarcasService
+    MarcasService,
+    NotificacionService
   ],
   exports: [
     CommonModule ,
